@@ -11,7 +11,7 @@ function updateGif(searchTerm) {
             return response.json()
         })
         .then(data => {
-            if (data.meta.status !== 200) {
+            if (data.data.length === 0) {
                 throw new Error("GIF not found")
             }
             const img = document.querySelector("img")
